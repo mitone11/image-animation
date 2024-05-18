@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    #image-container {
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      border: 5px solid #fff;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+      transition: transform 1s ease-in-out;
+    }
+
+    img.enlarged {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <div id="image-container">
+    <img src="https://drive.google.com/uc?export=view&id=1HwkZdvTylH2eCiePsKF7GxS6e8cxIL6O" alt="Cool Image" id="cool-image">
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function() {
+        const imageContainer = document.getElementById('image-container');
+        const image = document.getElementById('cool-image');
+        imageContainer.style.opacity = 1;
+        image.classList.add('enlarged');
+      }, 3000);
+    });
+  </script>
+</body>
+</html>
